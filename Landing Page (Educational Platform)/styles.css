@@ -1,0 +1,164 @@
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+header {
+    height: 60%;
+}
+
+nav {
+    display: flex;
+    border: 2px solid;
+    background: linear-gradient(to right, #396f9c 0%, #1d629f 100%);
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+nav h3 {
+    padding: 1%;
+    color: white;
+}
+
+header nav ul {
+    padding: 1%;
+    width: 50%;
+    position: relative;
+    right: 2%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    gap: 5%;
+    color: white;
+    border: 2px solid;
+}
+
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+#section1 {
+    width: 100%;
+    background-color: #ddffec;
+}
+
+#welcomeMsg {
+    width: 60%;
+    margin: 0 20% 0 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-family: cursive;
+}
+
+#welcomeMsg button {
+    background-color: blue;
+    color: white;
+    height: 37px;
+    width: 23%;
+    margin: 2%;
+}
+
+#welcomeMsg button:hover {
+    cursor: pointer;
+    height: 40px;
+    width: 25%;
+}
+
+#welcomeMsg h2,
+#section2 h2 {
+    font-size: 30px;
+    text-align: center;
+
+}
+
+.courses {
+    display: flex;
+    flex-direction: column;
+}
+
+.row1,
+.row2 {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.courseCard {
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 2%;
+    gap: 20px;
+    width: 35%;
+    margin: 2%;
+}
+
+.courseCard h4 {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    text-align: center;
+}
+
+.courseCard img {
+    align-self: center;
+    width: 55%;
+    height: 60%;
+}
+
+
+footer {
+    background: linear-gradient(to right, #396f9c 0%, #1d629f 100%);
+    display: flex;
+    border: 2px solid black;
+    font-size: 16px;
+    color: white;
+    font-weight: bolder;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#footRow {
+    display: flex;
+    width: 30%;
+    justify-content: center;
+    gap: 5%;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    header nav ul {
+        display: block;
+        padding-left: 4%;
+        list-style-position: inside;
+        border: none;
+    }
+
+    header nav ul li {
+        text-align: end;
+    }
+
+    #welcomeMsg button {
+        width: 38%;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    header nav ul li {
+        text-align: justify;
+    }
+}
