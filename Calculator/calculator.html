@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            background-color: rgb(190, 255, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .calculator {
+            border: 2px solid black;
+            background-color: rgb(255, 221, 221);
+            box-shadow: 4px 4px 20px black;
+        }
+
+        #display {
+            width: 300px;
+            height: 40px;
+            text-align: right;
+            margin: 6px;
+            font-size: 19px;
+            border: 2px solid black;
+            padding: 10px;
+            background-color: rgb(207, 255, 255);
+        }
+
+        button {
+            width: 60px;
+            height: 60px;
+            background-color: black;
+            border: none;
+            border-radius: 50%;
+            padding: 16px;
+            margin: 5px;
+            color: white;
+            font-size: x-large;
+        }
+
+        .buttons {
+            text-align: center;
+        }
+
+        button:hover {
+            cursor: pointer;
+            transform: translateY(-2px);
+        }
+
+        #equals {
+            width: 130px;
+            border-radius: 10%;
+            background-color: red;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <input type="text" name="display" value="" id="display">
+        <hr style="height: 3px; background-color: black;">
+        <div class="buttons">
+            <div>
+                <button onclick="input(7)">7</button>
+                <button onclick="input(8)">8</button>
+                <button onclick="input(9)">9</button>
+                <button onclick="input('/')">/</button>
+            </div>
+
+            <div>
+                <button onclick="input(4)">4</button>
+                <button onclick="input(5)">5</button>
+                <button onclick="input(6)">6</button>
+                <button onclick="input('*')">X</button>
+            </div>
+
+
+            <div>
+                <button onclick="input(1)">1</button>
+                <button onclick="input(2)">2</button>
+                <button onclick="input(3)">3</button>
+                <button onclick="input('-')">-</button>
+            </div>
+
+            <div>
+                <button onclick="input(0)">0</button>
+                <button onclick="input('.')"><span style="position: relative; bottom: 5px;">.</span></button>
+                <button onclick="input('+')">+</button>
+                <button onclick="remove()" style="align-items: end;"><i style="left: 9px;"
+                        class="gg-backspace"></i></button>
+            </div>
+
+            <div>
+                <button onclick="calculate()" id="equals">=</button>
+                <button onclick="clearDisplay()" style="color: red; font-weight: bolder;">C</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let display = document.getElementById('display')
+        function clearDisplay() {
+            display.value = '';
+            console.log("display cleared")
+        }
+        function input(a) {
+            display.value += a;
+        }
+        function calculate() {
+            if (display.value != '') {
+                let result = eval(display.value)
+                display.value = result
+            }
+        }
+        function remove() {
+            let displayArray = Array.from(display.value)
+            displayArray.pop(-1)
+            let result = displayArray.join(sep = '')
+            display.value = result
+        }
+    </script>
+</body>
+
+</html>
